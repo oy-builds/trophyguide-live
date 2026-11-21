@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Leonida Legend: an offline guide and tracker for all 55 Grand Theft Auto VI PlayStation 5 trophies — cited guides, a five-stage platinum roadmap, missable flags, spoiler shield and local progress tracking.">
+<title>Leonida Legend — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true">LL</div>
+    <div>
+      <h1>Leonida Legend</h1>
+      <p class="tagline">The offline guide &amp; tracker for all 55 Grand Theft Auto VI trophies on PlayStation 5.</p>
+    </div>
+  </div>
+  <div class="progress-box" aria-live="polite">
+    <div class="progress-head">
+      <span id="progress-pct">0%</span>
+      <span id="progress-count">0 / 55 earned</span>
+    </div>
+    <div class="progress-track"><div id="progress-bar"></div></div>
+    <div id="grade-counts" class="grade-counts"></div>
+  </div>
+</header>
+
+<nav class="toolbar" aria-label="Views and filters">
+  <div class="view-tabs" role="tablist">
+    <button class="tab is-active" data-view="checklist" role="tab">Checklist</button>
+    <button class="tab" data-view="roadmap" role="tab">Platinum Roadmap</button>
+    <button class="tab" data-view="missables" role="tab">Missables <span id="missable-badge" class="badge"></span></button>
+  </div>
+  <div class="filter-row">
+    <label class="search">
+      <span class="visually-hidden">Search trophies</span>
+      <input id="search" type="search" placeholder="Search name or description…" autocomplete="off">
+    </label>
+    <div class="chips" id="kind-chips" role="group" aria-label="Filter by kind">
+      <button class="chip is-active" data-kind="all">All kinds</button>
+      <button class="chip" data-kind="story">Story</button>
+      <button class="chip" data-kind="missable">Missable</button>
+      <button class="chip" data-kind="collectibles">Collectibles</button>
+      <button class="chip" data-kind="activities">Activities</button>
+      <button class="chip" data-kind="online">Online</button>
+    </div>
+    <div class="chips" id="grade-chips" role="group" aria-label="Filter by grade">
+      <button class="chip is-active" data-grade="all">All grades</button>
+      <button class="chip grade-platinum" data-grade="platinum">Platinum</button>
+      <button class="chip grade-gold" data-grade="gold">Gold</button>
+      <button class="chip grade-silver" data-grade="silver">Silver</button>
+      <button class="chip grade-bronze" data-grade="bronze">Bronze</button>
+    </div>
+    <label class="spoiler-toggle">
+      <input type="checkbox" id="spoilers">
+      <span>Reveal hidden trophies</span>
+    </label>
+    <div class="io-buttons">
+      <button id="export-btn" type="button">Export progress</button>
+      <button id="import-btn" type="button">Import</button>
+      <input id="import-file" type="file" accept="application/json,.json" hidden>
+    </div>
+  </div>
+</nav>
+
+<main class="layout">
+  <section class="content">
+    <div id="view-checklist" class="view">
+      <p id="result-line" class="result-line"></p>
+      <div id="cards" class="cards"></div>
+      <p id="empty-line" class="empty-line" hidden></p>
+    </div>
+    <div id="view-roadmap" class="view" hidden>
+      <p class="view-intro">Five stages from the opening hour to the platinum, ordered from the official descriptions: story first, choice- and partner-sensitive trophies before the finale, and the long cumulative grinds last.</p>
+      <div id="stages"></div>
+    </div>
+    <div id="view-missables" class="view" hidden>
+      <p class="view-intro warn">No trophy on the official list is labelled missable. The five below are <strong>flagged by inference from their official descriptions</strong> — a one-time choice, a partner-dependent moment, a specific first attempt. Treat the flags as caution, not fact.</p>
+      <div id="missable-cards" class="cards"></div>
+    </div>
+  </section>
+
+  <aside id="guide-panel" class="guide-panel" aria-live="polite">
+    <p class="guide-hint">Select a trophy to read its guide. Every guide is written from the official description and names its sources.</p>
+  </aside>
+</main>
+
+<footer class="footer">
+  <p>Trophy names, descriptions and grades are shown as PlayStation publishes them, as listed by Exophase and PSNProfiles. Guides are original to this entry and cite those sources beside each trophy. Progress is stored only in your browser (localStorage) and can be exported or imported as JSON. Works fully offline; no Rockstar Games artwork is used.</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
